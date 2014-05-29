@@ -1,6 +1,11 @@
 # Cryptobox #
 
-A script that wraps **cryptsetup**, **mkfs** and **losetup** to make it easy to create, mount and unmount encrypted image files using LUKS.
+A wrapper script for **cryptsetup** that makes it easy to create, mount and unmount encrypted image files using LUKS.
+
+## Requirements ##
+
+* **cryptsetup**: Userspace setup tool for transparent encryption of block devices using.
+* **util-linux**: Miscellaneous system utilities for Linux, required for **losetup** and **mkfs**.
 
 ## Usage ##
 
@@ -11,6 +16,10 @@ A script that wraps **cryptsetup**, **mkfs** and **losetup** to make it easy to 
   * eg: `cryptobox m myimg.img /mnt/cryptoimg`
 * `cryptobox u /mount/point`: unmounts an image file from a given directory.
   * eg: `cryptobox u /mnt/cryptoimg`
+
+## Credits ##
+
+Written by Kevin MacMartin: [GitHub Projects](https://github.com/prurigro?tab=repositories) | [Arch Linux AUR Packages](https://aur.archlinux.org/packages/?SeB=m&K=prurigro)
 
 ## License ##
 
