@@ -1,3 +1,0 @@
-Cryptobox is a script licensed under the GPLv3, that uses cryptosetup, mkfs and losetup to easily create, mount and unmount encrypted image files based on LUKS.
-
-Install cryptobox to $PATH and run 'cryptobox' for a list of commands
