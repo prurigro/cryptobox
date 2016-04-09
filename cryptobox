@@ -30,14 +30,14 @@ function usage {
 [[ "$UID" -ne 0 ]] && errorquit "run with root permission\n"
 
 # Check dependencies
-[[ `type -P dd` ]] || errorquit "Error: The 'dd' program is missing"
-[[ `type -P losetup` ]] || errorquit "Error: The 'losetup' program is missing"
-[[ `type -P cryptsetup` ]] || errorquit "Error: The 'cryptsetup' program is missing"
-[[ `type -P mkfs` ]] || errorquit "Error: The 'mkfs' program is missing"
+[[ `type -P dd` ]] || errorquit "The 'dd' program is missing"
+[[ `type -P losetup` ]] || errorquit "The 'losetup' program is missing"
+[[ `type -P cryptsetup` ]] || errorquit "The 'cryptsetup' program is missing"
+[[ `type -P mkfs` ]] || errorquit "The 'mkfs' program is missing"
 
 # Load modules if they aren't present
-[[ `lsmod | grep loop` ]] || echo "loading 'loop' module"; modprobe loop || errorquit "Error: failed to load 'loop' module"
-[[ `lsmod | grep dm_mod` ]] || echo "loading 'dm_mod' module"; modprobe dm_mod || errorquit "Error: failed to load 'dm_mod' module"
+[[ `lsmod | grep loop` ]] || echo "loading 'loop' module"; modprobe loop || errorquit "failed to load 'loop' module"
+[[ `lsmod | grep dm_mod` ]] || echo "loading 'dm_mod' module"; modprobe dm_mod || errorquit "failed to load 'dm_mod' module"
 
 if [ -z "$1" ]; then
     usage; exit 1
