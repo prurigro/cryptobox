@@ -6,10 +6,10 @@ A script that makes it easy to create, mount and unmount encrypted images in Lin
 
 * **cryptsetup**
 * **util-linux**:
- * **losetup**
- * **mkfs**
+  * **losetup**
+  * **mkfs**
 * **coreutils**:
- * **dd**
+  * **dd**
 
 ## Usage ##
 
