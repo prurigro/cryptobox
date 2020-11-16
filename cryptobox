@@ -8,7 +8,7 @@
 #
 # Written by Kevin MacMartin
 #
-# Licensed under the GPLv3
+# Released under the MIT license
 #
 
 [[ -t 1 ]] && {

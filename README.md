@@ -27,4 +27,4 @@ Written by Kevin MacMartin
 
 ## License ##
 
-This script is open source and licensed under the [GPLv3](http://www.gnu.org/copyleft/gpl.html).
+This script is open source and MIT licensed
