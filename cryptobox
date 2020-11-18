@@ -111,7 +111,7 @@ function create_image {
 
     # Initialize encryption on the image
     while (( 1 )); do
-        if cryptsetup -c aes-xts-plain64 -y -s 512 luksFormat "$loopdev"; then
+        if cryptsetup -c aes-xts-plain64 --pbkdf argon2id -y -s 512 luksFormat "$loopdev"; then
             break
         else
             printf '%s' "${c_w}Failed to encrypt the image, press return to try again or ctrl+c to exit$c_c"
