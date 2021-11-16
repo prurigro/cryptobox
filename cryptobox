@@ -139,7 +139,7 @@ function mount_image {
     mountpoint="$2"
 
     # Exit with an error if either the image file or mount point do not exist
-    [[ ! -f "$filename" ]] && error_exit "${c_m}$filename${c_w} does not exist"
+    [[ ! -e "$filename" ]] && error_exit "${c_m}$filename${c_w} does not exist"
     [[ -e "$mountpoint" ]] || error_exit "${c_m}$mountpoint${c_w} does not exist"
     [[ -d "$mountpoint" ]] || error_exit "${c_m}$mountpoint${c_w} is not a directory"
 
