@@ -30,12 +30,12 @@ scriptname="${0/*\/}"
 
 # Display uage information
 function usage {
-    printf '%s\n\n' "${c_w}Create, mount and unmount encrypted images${c_c}"
+    printf '%s\n\n' "${c_b}$scriptname${c_w}: Create, mount and unmount encrypted images${c_c}"
     printf '%s\n' "${c_w}Usage:${c_c}"
-    printf ' %s\n' "${c_y}create${c_w}: ${c_m}c${c_w}|${c_m}-c${c_w}|${c_m}--create${c_c}   ${c_w}$scriptname${c_c} ${c_m}c${c_c} [${c_b}filename${c_c}] [${c_g}filesystem${c_c}] [${c_t}size-in-mb${c_c}]"
-    printf ' %s\n' "${c_y}mount${c_w}:  ${c_m}m${c_w}|${c_m}-m${c_w}|${c_m}--mount${c_c}    ${c_w}$scriptname${c_c} ${c_m}m${c_c} [${c_b}filename${c_c}] [${c_r}mountpoint${c_c}]"
-    printf ' %s\n' "${c_y}umount${c_w}: ${c_m}u${c_w}|${c_m}-u${c_w}|${c_m}--unmount${c_c}  ${c_w}$scriptname${c_c} ${c_m}u${c_c} [${c_r}mountpoint${c_c}]"
-    printf ' %s\n' "${c_y}help${c_w}:   ${c_m}h${c_w}|${c_m}-h${c_w}|${c_m}--help${c_c}     ${c_w}$scriptname${c_c} ${c_m}h${c_c}"
+    printf ' %s\n' "${c_y}create${c_w}: ${c_m}c${c_w}|${c_m}-c${c_w}|${c_m}--create${c_c}  [${c_b}filename${c_c}] [${c_g}filesystem${c_c}] [${c_t}size-in-mb${c_c}]"
+    printf ' %s\n' "${c_y}mount${c_w}:  ${c_m}m${c_w}|${c_m}-m${c_w}|${c_m}--mount${c_c}   [${c_b}filename${c_c}] [${c_r}mountpoint${c_c}]"
+    printf ' %s\n' "${c_y}umount${c_w}: ${c_m}u${c_w}|${c_m}-u${c_w}|${c_m}--unmount${c_c} [${c_r}mountpoint${c_c}]"
+    printf ' %s\n' "${c_y}help${c_w}:   ${c_m}h${c_w}|${c_m}-h${c_w}|${c_m}--help${c_c}"
     exit "$1"
 }
 
@@ -209,7 +209,7 @@ declare -a missing_deps=()
 
 for dep in "${deps[@]}"; do
     type -P "$dep" >/dev/null \
-        || missing_deps=( "${missing_deps[@]}" "$dep" )
+        || missing_deps=("${missing_deps[@]}" "$dep")
 done
 
 [[ -n "${missing_deps[*]}" ]] && {
